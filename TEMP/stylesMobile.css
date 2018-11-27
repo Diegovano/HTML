@@ -1,0 +1,110 @@
+body
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 25px;
+    margin: 0px;
+    background-color: rgb(211, 211, 211);
+}
+
+.menu
+{
+    background-color: white;
+    box-shadow: 0px 0px 20px grey;
+    overflow: hidden;
+}
+
+.site-nav
+{
+    display: block;
+    padding-bottom: 15px;
+}
+
+.nav-subitems
+{
+    position: absolute;
+    left: 60%;
+    right: 10px;
+    margin: 0 auto;
+    text-align: center;
+    list-style: none;
+    margin: 10px;
+    margin-right: 0px;
+    line-height: 1.0;
+    padding: 0px;
+
+}
+
+.nav-subitem
+{
+    border: 0.5px solid grey;
+    display: block;
+    padding: 3px;
+    font-size: 13px;
+    margin-left: 0px; 
+    position: relative;
+}
+
+.nav-last
+{
+    margin-right: 0px;
+}
+
+li.nav-subitem:not(.nav-last)::after
+{
+    position: absolute;
+    content: '';
+    width: 0px;
+    top: 4px;
+    bottom: 4px;
+    right: -10px;
+}
+
+.nav-active
+{
+    background-color: rgb(236, 235, 235);
+}
+
+#instagram-link
+{
+    visibility: hidden;
+}
+
+#instagram-logo
+{
+    height: 20px;
+    max-width: 100%;
+    color: rgb(100, 100, 100);
+}
+
+a
+{
+    
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 200;
+}
+
+a:hover
+{
+    color: rgb(187, 187, 187);
+    transition: all 0.3s ease;
+}
+
+#logo
+{
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 80px;
+    max-width: 100%;   
+}
+
+#main-content-wrapper
+{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 20px grey;
+}
