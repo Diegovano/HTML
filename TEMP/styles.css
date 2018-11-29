@@ -19,6 +19,11 @@ h1, h2, h3, h4, h5, h6, p, .heading
     color: rgb(30, 30, 30);
 }
 
+h5
+{
+    margin-bottom: 0;
+}
+
 a:hover
 {
     color: rgb(187, 187, 187);
@@ -159,6 +164,7 @@ li.booklist-item:not(.booklist-last)::after
 .book-heading
 {
     text-align: center;
+    margin-bottom: 1em;
 }
 
 .author-button
@@ -209,6 +215,48 @@ li.booklist-item:not(.booklist-last)::after
     all: unset;
 }
 
+.author-image
+{
+    max-width: 100%;
+    height: 400px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    float: left;
+    
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.clearfix
+{
+    overflow: auto;
+}
+
+.sources
+{
+    font-style: italic;
+    display: inline-block;
+}
+
+.source-list
+{
+    font-style: italic;
+    display: inline-block;
+    margin: 0;
+}
+
+.subtitle
+{
+    margin: 0;
+}
+
+.event-timeline
+{
+    padding-left: 20px;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
 #instagram-link
 {
     
@@ -243,6 +291,8 @@ li.booklist-item:not(.booklist-last)::after
     margin-right: 2.5%;
     margin-bottom: 2.5%;
     padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
     padding-top: 5px;
     border: 1px solid rgb(240, 240, 240);
     background-color: white;
@@ -259,4 +309,22 @@ li.booklist-item:not(.booklist-last)::after
 #page-content
 {
     margin-top: 30px;
+    overflow: auto;
+}
+
+#author-first-pg
+{
+    margin-block-start: 0px;
+}
+
+#page-footer
+{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgb(240, 240, 240);
+}
+
+#site-link-author
+{
+    text-decoration: underline;
 }
