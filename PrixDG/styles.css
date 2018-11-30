@@ -255,7 +255,6 @@ li.booklist-item:not(.booklist-last)::after
     background-color: white;
     padding: 20px 0px;
     box-shadow: 0px 0px 10px grey;
-
 }
 
 
@@ -348,4 +347,33 @@ li.booklist-item:not(.booklist-last)::after
 	align-items: center;
 	flex-grow: 1;
 	margin-left: 30px;
+}
+
+#footer
+{
+    border-top: 1px solid rgb(240, 240, 240);
+    background-color: white;
+
+    position: relative;
+}
+
+#footer-content
+{
+    color: rgb(187, 187, 187);
+    padding: 100px;
+    display: inline-block;
+}
+
+#footer-logo
+{
+    height: 100px;
+    max-width: 100%;
+
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-right: -110px;
+    text-align: center;
+    vertical-align: middle;
 }
