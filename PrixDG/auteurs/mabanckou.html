@@ -5,30 +5,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <link rel="stylesheet" href="../styles.css">
-        <link rel="stylesheet" media="(max-width: 800px)" href="../stylesMobile.css">
+        <link rel="stylesheet" media="(max-width: 1000px)" href="../stylesMobile.css">
         <link rel="shortcut icon" href="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/favicon.ico">
     </head>
     <body>
-        <nav class="site-nav menu">
+        <div id="menu-wrapper" class="flex-container">
                 <a href="../index.html">
-                    <img id="logo" src="http://www.en.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/logo.png" alt="Lycée Français Charles De Gaulle de Londres">
-                </a>            
-                <ul class="nav-subitems">
-                <li class="nav-subitem">
-                    <a href="http://www.en.lyceefrancais.org.uk/" target="_blank" class="nav-link">Notre Etablissement</a>
-                </li>
-                <li class="nav-subitem">
-                    <a href="../selection.html" class="nav-link">La Séléction</a>
-                </li>
-                <li class="nav-subitem nav-last">
-                    <a href="../about.html" class="nav-link">Qui Sommes-nous?</a>
-                </li>
-            </ul>
-            <a href="https://www.instagram.com/" id="instagram-link">
-                <img src="../rsc/glyph-logo_May2016.png" alt="Notre Instagram" id="instagram-logo">   
-            </a>
-        </nav>
-        <br>
+                    <img src="../rsc/iconwhite.jpg" alt="Prix de Gaulle Logo" id="logo">
+                </a>
+                <div id="menu-nav-pane">
+                <a href="../index.html">
+                    <button class="nav-button">
+                        Page Principale
+                    </button>
+                </a>
+                <a href="../selection.html">
+                    <button class="nav-button">
+                        La Séléction
+                    </button>
+                </a>
+                <a href="../about.html">
+                    <button class="nav-button">
+                        Qui-Sommes Nous?
+                    </button>
+                </a>
+                <a href="http://www.lyceefrancais.org.uk/" target="_blank">
+                    <button class="nav-button nav-last">
+                        Notre Établissement
+                    </button>
+                </a>
+            </div>
+            <div id="social-links">
+                <p style="font-size: 10px; margin-right: 10px">Notre Instagram:</p>
+                <a href="https://www.instagram.com/prixdegaulle/?hl=fr" id="instagram-link">
+                    <img src="../rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo">
+                </a>
+            </div>
+        </div>        <br>
         <div id="main-content-wrapper">
             <div id="page-main-heading">
                 <strong class="heading">Alain Mabanckou</strong>
