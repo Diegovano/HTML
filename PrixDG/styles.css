@@ -112,6 +112,11 @@ li.booklist-item:not(.booklist-last)::after
     padding-right: 20px;
 }
 
+.book-synopsis
+{
+    margin-bottom: 75px;
+}
+
 .booklist-item
 {
     position: relative;
