@@ -93,12 +93,6 @@ li.booklist-item:not(.booklist-last)::after
     position: relative;
 }
 
-.flex-container
-{
-    display: flex;
-    flex-wrap: nowrap;
-}
-
 .book-description
 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -255,22 +249,51 @@ li.booklist-item:not(.booklist-last)::after
     outline: 0;
 }
 
+.line
+{
+    display: block;
+    background: #333333;
+    width: 25px;
+    height: 5px;
+    position: absolute;
+    transition: 0.4s;
+}
+
+.active .line-1
+{
+    transform: translate(0, 10px) rotate(-45deg);
+    -webkit-transform: translate(0, 10px) rotate(-45deg);
+}
+
+.active .line-2
+{
+    opacity: 0;
+}
+
+.active .line-3
+{
+    transform:  translate(0, -10px) rotate(45deg);
+    -webkit-transform: translate(0, -10px) rotate(45deg);
+}
+
+
+
 #menu-wrapper
 {
     background-color: white;
     padding: 20px 0px;
     box-shadow: 0px 0px 10px grey;
+    
     display: flex;
-    flex-flow: nowrap;
+    flex-wrap: nowrap;
 }
-
-
 
 #logo
 {
     height: 100px;
     max-width: 100%;
     float: left;
+    display: block;
 }
 
 #ig-logo
@@ -289,7 +312,7 @@ li.booklist-item:not(.booklist-last)::after
 
 #social-links
 {
-    display: flex;
+    display: none;
 
     margin-right: 50px;
     align-items: center;
@@ -297,6 +320,7 @@ li.booklist-item:not(.booklist-last)::after
 
 #menu-wrapper
 {
+    display: flex;
 	overflow: auto;
 	position: -webkit-sticky;
 	position: sticky;
@@ -350,10 +374,7 @@ li.booklist-item:not(.booklist-last)::after
 
 #menu-nav-pane
 {
-	display: flex;
-	align-items: center;
-	flex-grow: 1;
-	margin-left: 30px;
+    display: none;
 }
 
 #footer
@@ -387,5 +408,35 @@ li.booklist-item:not(.booklist-last)::after
 
 #window-menu-button
 {
+    display: flex;
+    height: 25px;
+    align-content: center;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translatey(-50%);
+    margin-right: 5%;
+    padding: 5px;
+
+    cursor: pointer;
+    background-color: #dddddd
+}
+
+#line-container
+{
+    width: 25px;
+}
+
+#window-menu
+{
     display: none;
+    opacity: 0;
+}
+
+#window-menu.active 
+{
+    display: inline;
+    opacity: 1;
+    transition: all 0.4s;
 }

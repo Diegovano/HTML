@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" media="(max-width: 1000px)" href="stylesMobile.css">
+        <link rel="stylesheet" media="(max-width: 1200px) and (min-width: 701px)" href="stylesIntermediate.css">
+        <link rel="stylesheet" media="(max-width: 500px)" href="stylesMobile.css">
         <link rel="shortcut icon" href="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/favicon.ico">
     </head>
     <body>
-        <div id="menu-wrapper" class="flex-container">
+        <div id="menu-wrapper">
             <img src="rsc/iconwhite.jpg" alt="Prix de Gaulle Logo" id="logo">
             <div id="menu-nav-pane">
                 <a href="">
@@ -39,6 +40,27 @@
                     <img src="rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo">
                 </a>
             </div>
+            <a id="window-menu-button" onclick="toggleActive(this)">
+                <div id="line-container">
+                    <span class="line line-1" style="top: 5px"></span>
+                    <span class="line line-2" style="top: 15px"></span>
+                    <span class="line line-3" style="top: 25px"></span>
+                </div>
+            </a>
+            <ul id="window-menu">
+                <li>
+                    Page Principale
+                </li>
+                <li>
+                    La Séléction
+                </li>
+                <li>
+                    Qui Sommes-Nous?
+                </li>
+                <li>
+                    Notre Établissement
+                </li>
+            </ul>
         </div>
         <br>
         <div id="main-content-wrapper">
@@ -62,10 +84,18 @@
             </div>
         </div>
     <div id="footer">
-            <div id="footer-content">
-                Crée à <strong>South Kensington</strong> par les 2 <sup>nde</sup>1.
-            </div>
-            <img src="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/logo.png" alt="logo lycée" id="footer-logo">
-        </div>    
+        <div id="footer-content">
+            Crée à <strong>South Kensington</strong> par les 2<sup>nde</sup>1.
+        </div>
+        <img src="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/logo.png" alt="logo lycée" id="footer-logo">
+    </div>   
+    <script>
+        function toggleActive(x)
+        {
+            x.classList.toggle("active");
+            var menu = document.getElementById("window-menu");
+            menu.classList.toggle("active");
+        }
+    </script>
     </body>
 </html>
