@@ -42,6 +42,41 @@
                     <img src="rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo">
                 </a>
             </div>
+            <a id="window-menu-button" onclick="toggleActive(this)">
+                <div id="line-container">
+                    <span class="line line-1" style="top: 5px"></span>
+                    <span class="line line-2" style="top: 15px"></span>
+                    <span class="line line-3" style="top: 25px"></span>
+                </div>
+            </a>
+            <ul id="window-menu">
+                <a href="index.html">
+                    <li>
+                        Page Principale
+                    </li>
+                </a>
+                <li class="nav-active">
+                    La Séléction
+                </li>
+                <a href="about.html">
+                    <li>
+                        Qui Sommes-Nous?
+                    </li>
+                </a>
+                <a href="http://www.lyceefrancais.org.uk/" target="_blank">
+                    <li>
+                        Notre Établissement
+                    </li>
+                </a>
+                <a href="https://www.instagram.com/prixdegaulle/?hl=fr" target="_blank" id="instagram-link-window">
+                    <li class="nav-last">
+                        <span id="instagram-text-window">
+                            Instagram
+                        </span>
+                        <img src="rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo-window">
+                    </li>
+                </a>
+            </ul>
         </div>
         <br>
         <div id="main-content-wrapper">
@@ -50,7 +85,7 @@
             </div>
             <div id="page-content">
                 <ul class="booklist">
-                    <li class="booklist-item flex-container">
+                    <li class="booklist-item">
                         <div class="booklist-image">
                             <img src="rsc\img bookcovers\forest.jpg" alt="Dans La Foret" class="bookcover" >
                         </div>
@@ -65,7 +100,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="booklist-item flex-container">
+                    <li class="booklist-item">
                         <div class="booklist-image">
                             <img src="rsc\img bookcovers\chien.jpg" alt="L'Archipel du Chien" class="bookcover">
                         </div>
@@ -79,7 +114,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="booklist-item flex-container">
+                    <li class="booklist-item">
                         <div class="booklist-image">
                             <img src="rsc\img bookcovers\vies.jpg" alt="" class="bookcover">
                         </div>
@@ -95,7 +130,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="booklist-item flex-container">
+                    <li class="booklist-item">
                         <div class="booklist-image">
                             <img src="rsc\img bookcovers\homme.jpg" alt="" class="bookcover">
                         </div>
@@ -111,7 +146,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="booklist-item flex-container booklist-last">
+                    <li class="booklist-item booklist-last">
                         <div class="booklist-image">
                             <img src="rsc\img bookcovers\cigognes.jpg" alt="" class="bookcover">
                         </div>
@@ -134,5 +169,13 @@
             </div>
             <img src="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/logo.png" alt="logo lycée" id="footer-logo">
         </div>    
+        <script>
+            function toggleActive(x)
+            {
+                x.classList.toggle("active");
+                var menu = document.getElementById("window-menu");
+                menu.classList.toggle("active");
+            }
+        </script>
     </body>
 </html>

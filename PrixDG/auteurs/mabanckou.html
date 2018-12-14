@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <link rel="stylesheet" href="../styles.css">
-        <link rel="stylesheet" media="(max-width: 1000px)" href="../stylesMobile.css">
+        <link rel="stylesheet" media="(max-width: 1200px) and (min-width: 701px)" href="../stylesIntermediate.css">
+        <link rel="stylesheet" media="(max-width: 700px)" href="../stylesMobile.css">
         <link rel="shortcut icon" href="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/favicon.ico">
     </head>
     <body>
@@ -41,13 +42,49 @@
                     <img src="../rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo">
                 </a>
             </div>
-        </div>        <br>
+            <a id="window-menu-button" onclick="toggleActive(this)">
+                <div id="line-container">
+                    <span class="line line-1" style="top: 5px"></span>
+                    <span class="line line-2" style="top: 15px"></span>
+                    <span class="line line-3" style="top: 25px"></span>
+                </div>
+            </a>
+            <ul id="window-menu">
+                <li>
+                    Page Principale
+                </li>
+                <a href="../selection.html">
+                    <li>
+                        La Séléction
+                    </li>
+                </a>
+                <a href="../about.html">
+                    <li>
+                        Qui Sommes-Nous?
+                    </li>
+                </a>
+                <a href="http://www.lyceefrancais.org.uk/" target="_blank">
+                    <li>
+                        Notre Établissement
+                    </li>
+                </a>
+                <a href="https://www.instagram.com/prixdegaulle/?hl=fr" target="_blank" id="instagram-link-window">
+                    <li class="nav-last">
+                        <span id="instagram-text-window">
+                            Instagram
+                        </span>
+                        <img src="../rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo-window">
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <br>
         <div id="main-content-wrapper">
             <div id="page-main-heading">
                 <strong class="heading">Alain Mabanckou</strong>
             </div>
             <div id="page-content">
-                <img src="../rsc/auteurs/mabanckou.jpg" alt="Alain-Mabanckou" class="author-image">
+                <img src="../rsc/auteurs/mabanckou.jpg" alt="Alain-Mabanckou" class="author-image" id="img-portrait">
                 <p id="author-first-pg">Alain Mabanckou passe son enfance dans la ville côtière de Pointe-Noire où il obtient un baccalauréat en Lettres et Philosophie au Lycée Karl-Marx. Il s’oriente alors vers le droit, sa mère souhaitant qu’il devienne magistrat ou avocat. Après un premier cycle de droit privé à l’Université Marien-Ngouabi à Brazzaville, il obtient une bourse d’études et s’envole pour la France à l’âge de 22 ans, avec déjà quelques manuscrits dans ses affaires, des recueils de poèmes pour la plupart, qu’il commencera à publier trois ans plus tard.</p>
                 <p>Après un DEA de droit à l'Université de Paris-Dauphine, il travaille une dizaine d'années dans le groupe Suez-Lyonnaise des Eaux, mais se consacre de plus en plus à l'écriture avec la parution en 1998 de son premier roman Bleu-Blanc-Rouge qui lui vaut le Grand Prix Littéraire de l'Afrique noire. À partir de cette date, il ne cessera de publier avec régularité, aussi bien de la prose que de la poésie. C'est surtout le roman qui le révèle au grand public, avec notamment Verre cassé, unanimement salué par la presse, la critique et les lecteurs ; puis Mémoires de porc-épic qui lui vaut en 2006 l'obtention du Prix Renaudot. Les deux romans sont parus aux éditions du Seuil, respectivement en 2005 et en 2006.</p>
                 <p>Écrivain en résidence en 2002, il enseigna la littérature francophone à Ann Arbor pendant trois ans avant d'être remarqué par l’Université de Californie à Los Angeles (UCLA) qui l'invite d'abord comme Visiting Professor en 2006 puis le nomme Professeur titulaire (Full Professor) de littérature francophone en 2007. Il vit aujourd'hui à Santa Monica, en Californie.</p>
@@ -71,9 +108,16 @@
         </div>
         <div id="footer">
             <div id="footer-content">
-                Crée à <strong>South Kensington</strong> par les 2 <sup>nde</sup>1.
+                Crée à <strong>South Kensington</strong> par les 2<sup>nde</sup>1.
             </div>
             <img src="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/logo.png" alt="logo lycée" id="footer-logo">
-        </div>    
+        </div>
+        <script>
+            function toggleActive(x)
+            {
+                x.classList.toggle("active");
+                document.getElementById("window-menu").classList.toggle("active");
+            }
+        </script>
     </body>
 </html>

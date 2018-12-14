@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" media="(max-width: 1200px) and (min-width: 701px)" href="stylesIntermediate.css">
-        <link rel="stylesheet" media="(max-width: 500px)" href="stylesMobile.css">
+        <link rel="stylesheet" media="(max-width: 700px)" href="stylesMobile.css">
         <link rel="shortcut icon" href="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/favicon.ico">
     </head>
     <body>
@@ -48,24 +48,38 @@
                 </div>
             </a>
             <ul id="window-menu">
-                <li>
+                <li class="nav-active">
                     Page Principale
                 </li>
-                <li>
-                    La Séléction
-                </li>
-                <li>
-                    Qui Sommes-Nous?
-                </li>
-                <li>
-                    Notre Établissement
-                </li>
+                <a href="selection.html">
+                    <li>
+                        La Séléction
+                    </li>
+                </a>
+                <a href="about.html">
+                    <li>
+                        Qui Sommes-Nous?
+                    </li>
+                </a>
+                <a href="http://www.lyceefrancais.org.uk/" target="_blank">
+                    <li>
+                        Notre Établissement
+                    </li>
+                </a>
+                <a href="https://www.instagram.com/prixdegaulle/?hl=fr" target="_blank" id="instagram-link-window">
+                    <li class="nav-last">
+                        <span id="instagram-text-window">
+                            Instagram
+                        </span>
+                        <img src="rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo-window">
+                    </li>
+                </a>
             </ul>
         </div>
         <br>
         <div id="main-content-wrapper">
             <div id="page-main-heading">
-                <strong class="heading">Bienvenue au Site du Prix de Gaulle de 2019</strong>
+                <strong class="heading">Bienvenue sur le Site du Prix de Gaulle de 2019</strong>
                 <h4 class="subtitle">« Construisons des ponts, pas des murs »</h4>
             </div>
             <div id="page-content">
@@ -93,8 +107,7 @@
         function toggleActive(x)
         {
             x.classList.toggle("active");
-            var menu = document.getElementById("window-menu");
-            menu.classList.toggle("active");
+            document.getElementById("window-menu").classList.toggle("active");
         }
     </script>
     </body>

@@ -60,6 +60,8 @@ li.booklist-item:not(.booklist-last)::after
     height: 1px;
     width: 100%;
     bottom: 22px;
+    display: flex;
+    flex-wrap: nowrap;
 
     background-color: rgb(240, 240, 240);
 }
@@ -93,12 +95,6 @@ li.booklist-item:not(.booklist-last)::after
     position: relative;
 }
 
-.flex-container
-{
-    display: flex;
-    flex-wrap: nowrap;
-}
-
 .book-description
 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -121,10 +117,13 @@ li.booklist-item:not(.booklist-last)::after
 {
     position: relative;
     padding-bottom: 40px;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .book-heading
 {
+    display: block;
     text-align: center;
     margin-bottom: 1em;
 }

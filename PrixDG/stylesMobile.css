@@ -3,86 +3,26 @@ body
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 25px;
     margin: 0px;
-    background-color: rgb(211, 211, 211);
-}
-
-.menu
-{
-    background-color: white;
-    box-shadow: 0px 0px 20px grey;
-    overflow: hidden;
-}
-
-.site-nav
-{
-    display: block;
-    padding-bottom: 15px;
-}
-
-.nav-subitems
-{
-    position: absolute;
-    left: 60%;
-    right: 10px;
-    margin: 0 auto;
-    text-align: center;
-    list-style: none;
-    margin: 10px;
-    margin-right: 0px;
-    line-height: 1.0;
-    padding: 0px;
-
-}
-
-.nav-subitem
-{
-    border: 0.5px solid grey;
-    display: block;
-    padding: 3px;
-    font-size: 13px;
-    margin-left: 0px; 
-    position: relative;
-}
-
-.nav-last
-{
-    margin-right: 0px;
-}
-
-li.nav-subitem:not(.nav-last)::after
-{
-    position: absolute;
-    content: '';
-    width: 0px;
-    top: 4px;
-    bottom: 4px;
-    right: -10px;
-}
-
-.nav-active
-{
-    background-color: rgb(236, 235, 235);
-}
-
-#instagram-link
-{
-    visibility: hidden;
-}
-
-#instagram-logo
-{
-    height: 20px;
-    max-width: 100%;
-    color: rgb(100, 100, 100);
+    background-color: whitesmoke;
+    z-index: 1;
 }
 
 a
 {
-    
     color: rgb(100, 100, 100);
     text-decoration: none;
     transition: all 0.3s ease;
-    font-weight: 200;
+	font-weight: 200;
+}
+
+h1, h2, h3, h4, h5, h6, p, .heading
+{
+    color: rgb(30, 30, 30);
+}
+
+h5
+{
+    margin-bottom: 0;
 }
 
 a:hover
@@ -91,20 +31,482 @@ a:hover
     transition: all 0.3s ease;
 }
 
+strong
+{
+    text-align: inherit;
+}
+
+strong.heading
+{
+    font-size: 150%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+ul
+{
+    list-style: none;
+}
+
+.menu
+{
+    background-color: white;
+    box-shadow: 0px 0px 10px grey;
+}
+
+li.booklist-item:not(.booklist-last)::after
+{
+    position: absolute;
+    display: block;
+    content: '';
+    height: 1px;
+    width: 100%;
+    bottom: 22px;
+
+    background-color: rgb(240, 240, 240);
+}
+
+.booklist-last
+{
+    padding: 0px !important;
+}
+
+.nav-active
+{
+    background-color: rgb(236, 235, 235);
+}
+
+.bookcover
+{
+    max-width: 100%;
+    height: 200px;
+    border: 1px solid rgb(200, 200, 200);
+    display: block;
+}
+
+.booklist
+{
+    padding-inline-start: 0px;
+}
+
+.booklist-image
+{
+    display: none;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.book-description
+{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: block;
+
+    flex: unset;
+    flex-direction: unset;
+    align-content: unset;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.book-synopsis
+{
+    margin-bottom: 75px;
+}
+
+.booklist-item
+{
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.book-heading
+{
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.author-button
+{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -150px;
+    text-align: center;
+}
+
+.author-button
+{
+    width: 300px;
+    height: 50px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.author-button:hover
+{
+    width: 300px;
+    height: 50px;
+
+    transition: all 0.3s ease;
+    background-color: whitesmoke;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+.author-link, .author-link:hover
+{
+    all: unset;
+}
+
+.author-image
+{
+    max-width: 100%;
+    height: 45vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    float: none;
+    display: block;
+    
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.clearfix
+{
+    overflow: auto;
+}
+
+.sources
+{
+    font-style: italic;
+    display: inline-block;
+}
+
+.source-list
+{
+    font-style: italic;
+    display: inline-block;
+    margin: 0;
+}
+
+.subtitle
+{
+    margin: 0;
+}
+
+.event-timeline
+{
+	padding-left: 20px;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+.nav-button
+{
+    background-color: whitesmoke;
+    border: 1px solid rgb(61, 61, 61);
+    width: 12.5vw;
+    font-size: 1.10vw;
+    transition: all 0.3s ease;
+    
+    cursor: pointer;
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.nav-button:not(.nav-last)
+{
+    border-right: 0;
+}
+
+.nav-active
+{
+    background-color: rgb(207, 207, 207);
+}
+
+.nav-button:not(.nav-active):hover
+{
+    color: rgb(187, 187, 187);
+    transition: all 0.3s ease;
+}
+
+.nav-button:not(.nav-active):focus
+{
+    color: rgb(187, 187, 187);
+    outline: 0;
+}
+
+.line
+{
+    display: block;
+    background: #333333;
+    width: 25px;
+    height: 5px;
+    position: absolute;
+    transition: 0.4s;
+}
+
+.active .line-1
+{
+    transform: translate(0, 10px) rotate(-45deg);
+    -webkit-transform: translate(0, 10px) rotate(-45deg);
+}
+
+.active .line-2
+{
+    opacity: 0;
+}
+
+.active .line-3
+{
+    transform:  translate(0, -10px) rotate(45deg);
+    -webkit-transform: translate(0, -10px) rotate(45deg);
+}
+
+#window-menu li
+{
+    border: 1px solid rgb(100, 100, 100);
+    border-bottom: 0;
+    padding: 10px;
+    color: black;
+}
+
+#window-menu li.nav-last
+{
+    border: 1px solid rgb(100, 100, 100);
+    padding: 10px;
+    color: black;
+}
+
+#window-menu li:active
+{
+    background-color: rgb(250,250,250);
+}
+
+
+
+
+#menu-wrapper
+{
+    background-color: white;
+    padding: 20px 0px;
+    box-shadow: 0px 0px 10px grey;
+    overflow: auto;
+    height: 100px;
+}
+
 #logo
 {
-    margin-top: 5px;
-    margin-left: 5px;
-    height: 80px;
-    max-width: 100%;   
+    height: 100px;
+    max-width: 100%;
+    position: absolute;
+}
+
+#ig-logo
+{
+    height: 25px;
+    max-width: 100%;
+}
+
+#ig-logo-window
+{
+    height: 30px;
+    max-width: 100%;
+    position: absolute;
+}
+
+#instagram-link
+{
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    background-color: rgb(221, 221, 221);
+}
+
+#instagram-text-window
+{
+    display: inline;
+    padding-right: 10px;
+}
+
+#social-links
+{
+    display: none;
+
+    margin-right: 50px;
+    align-items: center;
+}
+
+#menu-wrapper
+{
+    display: flex;
+	overflow: visible;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 10;
 }
 
 #main-content-wrapper
 {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 2.5%;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    border: 1px solid rgb(240, 240, 240);
     background-color: white;
-    box-shadow: 0px 0px 20px grey;
+}
+
+#page-main-heading
+{
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+#page-content
+{
+    margin-top: 0;
+    overflow: auto;
+}
+
+#author-first-pg
+{
+    margin-block-start: 0px;
+}
+
+#page-footer
+{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgb(240, 240, 240);
+}
+
+#site-link
+{
+    text-decoration: underline;
+}
+
+#menu-nav-pane
+{
+    display: none;
+}
+
+#footer
+{
+    border-top: 1px solid rgb(240, 240, 240);
+    background-color: white;
+
+    position: relative;
+    overflow: hidden;
+}
+
+#footer-content
+{
+    color: rgb(187, 187, 187);
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 20px;
+    margin-bottom: 130px;
+    width: 100%;
+    display: inline-block;
+}
+
+#footer-logo
+{
+    height: 100px;
+    max-width: 100%;
+    margin-top: 0px;
+}
+
+#window-menu-button
+{
+    display: flex;
+    height: 25px;
+    align-content: center;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translatey(-50%);
+    margin-right: 5%;
+    padding: 5px;
+
+    cursor: pointer;
+    background-color: #dddddd
+}
+
+#line-container
+{
+    width: 25px;
+}
+
+#window-menu
+{
+    display: inline;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    line-height: 30px;
+
+    background-color: rgb(236, 235, 235);
+    top: 100px;
+    right: 5%;
+    left: 5%;
+    padding: 20px;
+    box-shadow: 0 0 10px grey;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+    z-index: -1;
+}
+
+#window-menu.active 
+{
+    display: inline;
+
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.4s;
+    z-index: initial;
+}
+
+#img-portrait
+{
+    max-width: 100%;
+    height: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    float: none;
+    display: block;
+    
+    border: 1px solid rgb(200, 200, 200);
 }

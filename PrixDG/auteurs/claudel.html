@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <link rel="stylesheet" href="../styles.css">
-        <link rel="stylesheet" media="(max-width: 1000px)" href="../stylesMobile.css">
+        <link rel="stylesheet" media="(max-width: 1200px) and (min-width: 701px)" href="../stylesIntermediate.css">
+        <link rel="stylesheet" media="(max-width: 700px)" href="../stylesMobile.css">
         <link rel="shortcut icon" href="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/favicon.ico">
     </head>
     <body>
@@ -41,6 +42,41 @@
                     <img src="../rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo">
                 </a>
             </div>
+            <a id="window-menu-button" onclick="toggleActive(this)">
+                <div id="line-container">
+                    <span class="line line-1" style="top: 5px"></span>
+                    <span class="line line-2" style="top: 15px"></span>
+                    <span class="line line-3" style="top: 25px"></span>
+                </div>
+            </a>
+            <ul id="window-menu">
+                <li>
+                    Page Principale
+                </li>
+                <a href="../selection.html">
+                    <li>
+                        La Séléction
+                    </li>
+                </a>
+                <a href="../about.html">
+                    <li>
+                        Qui Sommes-Nous?
+                    </li>
+                </a>
+                <a href="http://www.lyceefrancais.org.uk/" target="_blank">
+                    <li>
+                        Notre Établissement
+                    </li>
+                </a>
+                <a href="https://www.instagram.com/prixdegaulle/?hl=fr" target="_blank" id="instagram-link-window">
+                    <li class="nav-last">
+                        <span id="instagram-text-window">
+                            Instagram
+                        </span>
+                        <img src="../rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo-window">
+                    </li>
+                </a>
+            </ul>
         </div>
         <br>
         <div id="main-content-wrapper">
@@ -48,7 +84,7 @@
                 <strong class="heading">Philippe Claudel</strong>
             </div>
             <div id="page-content">
-                <img src="../rsc/auteurs/claudel.jpg" alt="Philippe-Claudel" class="author-image">
+                <img src="../rsc/auteurs/claudel.jpg" alt="Philippe-Claudel" class="author-image" id="img-portrait">
                 <p id="author-first-pg">Après l'obtention de son baccalauréat en 1981, il mène une vie dissolue pendant deux années, passant son temps à écrire des poèmes, des scénarios, à jouer dans de nombreux courts métrages. En 1983, il rencontre Dominique sa femme qui l'incite à reprendre ses études. Il passe une licence de lettres modernes, ainsi qu'une licence d'histoire de l'art et un DEUG d'histoire et géographie. Il quitte son emploi de surveillant dans un lycée après avoir réussi le concours de PEGC en 1985.</p>
                 <p>Par la suite, il passe et obtient le CAPES de lettres modernes, puis l'agrégation de lettres modernes. En 2001, il soutient une thèse de doctorat en littérature française consacrée à André Hardellet (1911-1974) sous le titre "Géographies d'André Hardellet".</p>
                 <p>Il enseigne en collège, en lycée, dans des hôpitaux auprès d’enfants malades, pendant douze ans à la maison d’arrêt de Nancy et pendant quatre années dans un établissement spécialisé pour enfants handicapés. Il publie son premier roman, "Meuse l’oubli", en 1999 aux éditions Balland.</p>
@@ -69,9 +105,16 @@
         </div>
         <div id="footer">
                 <div id="footer-content">
-                    Crée à <strong>South Kensington</strong> par les 2 <sup>nde</sup>1.
+                    Crée à <strong>South Kensington</strong> par les 2<sup>nde</sup>1.
                 </div>
                 <img src="http://www.lyceefrancais.org.uk/sites/lfcg/themes/lfcg/logo.png" alt="logo lycée" id="footer-logo">
             </div>    
+            <script>
+                function toggleActive(x)
+                {
+                    x.classList.toggle("active");
+                    document.getElementById("window-menu").classList.toggle("active");
+                }
+            </script>
         </body>
     </html>
