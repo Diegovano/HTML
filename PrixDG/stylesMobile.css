@@ -91,7 +91,7 @@ li.booklist-item:not(.booklist-last)::after
 .booklist
 {
     padding-inline-start: 0px;
-    -webkit-margin-start: 0px;
+    -webkit-padding-start: 0px;
     padding-left: 0px;
 }
 
@@ -147,11 +147,14 @@ li.booklist-item:not(.booklist-last)::after
     width: 300px;
     height: 50px;
 
+    -webkit-appearance: none;
+
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: #4CAF50;
     border: none;
     color: white;
+    -webkit-text-fill-color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -168,6 +171,7 @@ li.booklist-item:not(.booklist-last)::after
     background-color: whitesmoke;
     border: 1px solid #4CAF50;
     color: #4CAF50;
+    -webkit-text-fill-color: #4CAF50;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -366,8 +370,7 @@ li.booklist-item:not(.booklist-last)::after
 {
     display: flex;
 	overflow: visible;
-	position: -webkit-sticky;
-	position: sticky;
+	position: relative;
 	top: 0;
 	z-index: 10;
 }
