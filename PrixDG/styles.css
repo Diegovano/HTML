@@ -146,7 +146,8 @@ li.booklist-item:not(.booklist-last)::after
 
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: #4CAF50;
+    background-color: #358240;
+    font-weight: bold;
     border: none;
     color: white;
     -webkit-text-fill-color: white;
@@ -217,9 +218,14 @@ li.booklist-item:not(.booklist-last)::after
 
 .event-timeline
 {
-	padding-left: 20px;
+    padding-left: 20px;
 	list-style-type: disc;
 	list-style-position: inside;
+}
+
+.site-link
+{
+    text-decoration: underline;
 }
 
 .nav-button
@@ -344,11 +350,6 @@ li.booklist-item:not(.booklist-last)::after
     padding-bottom: 10px;
     padding-top: 10px;
     border-top: 1px solid rgb(240, 240, 240);
-}
-
-#site-link
-{
-    text-decoration: underline;
 }
 
 #menu-nav-pane

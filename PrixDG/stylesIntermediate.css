@@ -142,7 +142,8 @@ li.booklist-item:not(.booklist-last)::after
 
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: #4CAF50;
+    background-color: #358240;
+    font-weight: bold;
     border: none;
     color: white;
     -webkit-text-fill-color: white;
@@ -237,6 +238,11 @@ li.booklist-item:not(.booklist-last)::after
     border-right: 0;
 }
 
+.site-link
+{
+    text-decoration: underline;
+}
+
 .nav-active
 {
     background-color: rgb(207, 207, 207);
@@ -268,12 +274,12 @@ li.booklist-item:not(.booklist-last)::after
 {
     transform: translate(0, 10px) rotate(-45deg);
     -webkit-transform: translate(0, 10px) rotate(-45deg);
-}
+}    
 
 .active .line-2
 {
     opacity: 0;
-}
+}        
 
 .active .line-3
 {
@@ -361,11 +367,11 @@ li.booklist-item:not(.booklist-last)::after
 #menu-wrapper
 {
     display: flex;
-	overflow: visible;
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-	z-index: 10;
+    overflow: visible;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 #main-content-wrapper
@@ -405,11 +411,6 @@ li.booklist-item:not(.booklist-last)::after
     padding-bottom: 10px;
     padding-top: 10px;
     border-top: 1px solid rgb(240, 240, 240);
-}
-
-#site-link
-{
-    text-decoration: underline;
 }
 
 #menu-nav-pane
