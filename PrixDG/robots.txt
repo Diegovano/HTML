@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /rsc/test/
+
+Sitemap: https://www.diegovano.com/sitemap.xml

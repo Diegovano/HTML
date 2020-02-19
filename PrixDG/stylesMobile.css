@@ -15,6 +15,13 @@ a
 	font-weight: 200;
 }
 
+.hidden
+{
+    text-decoration: inherit;
+    color: inherit;
+    font-weight: inherit;
+}
+
 h1, h2, h3, h4, h5, h6, p, .heading
 {
     color: rgb(30, 30, 30);
@@ -90,8 +97,6 @@ li.booklist-item:not(.booklist-last)::after
 
 .booklist
 {
-    padding-inline-start: 0px;
-    -webkit-padding-start: 0px;
     padding-left: 0px;
 }
 
@@ -155,7 +160,6 @@ li.booklist-item:not(.booklist-last)::after
     font-weight: bold;
     border: none;
     color: white;
-    -webkit-text-fill-color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -172,18 +176,12 @@ li.booklist-item:not(.booklist-last)::after
     background-color: whitesmoke;
     border: 1px solid #4CAF50;
     color: #4CAF50;
-    -webkit-text-fill-color: #4CAF50;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
 
-}
-
-.author-link, .author-link:hover
-{
-    all: unset;
 }
 
 .author-image
@@ -410,7 +408,7 @@ li.booklist-item:not(.booklist-last)::after
 
 #author-first-pg
 {
-    margin-block-start: 0px;
+    margin-top: 0px;
 }
 
 #page-footer
@@ -469,7 +467,7 @@ li.booklist-item:not(.booklist-last)::after
     padding: 5px;
 
     cursor: pointer;
-    background-color: #dddddd
+    background-color: #dddddd;
 }
 
 #line-container
