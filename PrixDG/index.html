@@ -11,6 +11,7 @@
         <link rel="stylesheet" media="(max-width: 700px)" href="stylesMobile.css">
         <link rel="shortcut icon" href="rsc/favicon.ico">
         <link rel="apple-touch-icon" href="rsc/appleIcon.png">
+        <script src="/script.js"></script>
     </head>
     <body>
         <div id="menu-wrapper" class="flex-container">
@@ -29,7 +30,7 @@
                     <img src="rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo">
                 </a>
             </div>
-            <a id="window-menu-button" onclick="toggleActive(this)">
+            <a id="window-menu-button" onclick="toggleActive(this)" onkeydown="keyToggleActive(this)" tabindex="0">
                 <div id="line-container">
                     <span class="line line-1" style="top: 5px"></span>
                     <span class="line line-2" style="top: 15px"></span>
@@ -50,13 +51,13 @@
         <br>
         <div id="main-content-wrapper">
             <div id="page-main-heading">
-                <strong class="heading">Bienvenue sur le Site du Prix de Gaulle de 2019</strong>
-                <h4 class="subtitle">« Construisons des ponts, pas des murs »</h4>
+                <h1>Bienvenue sur le Site du Prix de Gaulle de 2019</h1>
+                <h2>« Construisons des ponts, pas des murs »</h2>
             </div>
             <div id="page-content">
-                <p>Nous sommes les élèves et les enseignants du Lycée Français Charles de Gaulle de Londres et le Lycée International Winston Curchill, nous vous présentons le prix de Gaulle: Avec une séléction récente, diverse et unique, les élèves choisissent l'oeuvre qu'ils ont préféré afin d'élir un lauréat qui recevra le premier prix.</p>
+                <p>Nous sommes les élèves et les enseignants du Lycée Français Charles de Gaulle de Londres et le Lycée International Winston Churchill, nous vous présentons le prix de Gaulle: Avec une séléction récente, diverse et unique, les élèves choisissent l'oeuvre qu'ils ont préféré afin d'élir un lauréat qui recevra le premier prix.</p>
                 <p>Destiné aux Lycéen(nes) des classe de 2<sup>nde</sup> il proposera chaque année une séléction de 5 romans récents dont 1 roman en anglais qui pourra être lu en anglais ou dans sa traduction française.</p>
-                <p><em><strong>« Construisons des ponts, pas des murs » !</strong></em> Fortes de cette conviction, <a href="about.html" class="site-link">les créatrices du Prix</a>, professeures de Lettres et documentaliste on souhaité jouer le carte de la transversalité ( les fameux « ponts » ) pour permettre à de jeunes lectrices et de jeunes lecteurs de rencontrer -peut-être !- « leur » livre, i.e celui qu'ils/elles auront à coeur de défendre au moment de vote.</p>
+                <p><em><strong>« Construisons des ponts, pas des murs » !</strong></em> Fortes de cette conviction, <a href="about.html" class="site-link">les créatrices du Prix</a>, professeures de Lettres et documentaliste on souhaité jouer la carte de la transversalité ( les fameux « ponts » ) pour permettre à de jeunes lectrices et de jeunes lecteurs de rencontrer -peut-être !- « leur » livre, i.e celui qu'ils/elles auront à coeur de défendre au moment de vote.</p>
                 <br>
                 <strong>Les Évenements Principaux:</strong>
                 <ul class="event-timeline">
@@ -67,18 +68,11 @@
                 </ul>
             </div>
         </div>
-    <div id="footer">
-        <div id="footer-content">
-            Crée <a href="/rsc/test" class="hidden">à</a> <strong>South Kensington</strong> par les 2<sup>nde</sup>1.
+        <div id="footer">
+            <div id="footer-content">
+                Crée <a href="/rsc/test" class="hidden" tabindex="-1">à</a> <strong>South Kensington</strong> par les 2<sup>nde</sup>1.
+            </div>
+            <img src="rsc/schoolLogo.png" alt="logo lycée" id="footer-logo">
         </div>
-        <img src="rsc/schoolLogo.png" alt="logo lycée" id="footer-logo">
-    </div>
-    <script>
-        function toggleActive(x)
-        {
-            x.classList.toggle("active");
-            document.getElementById("window-menu").classList.toggle("active");
-        }
-    </script>
     </body>
 </html>

@@ -15,6 +15,12 @@ a
 	font-weight: 200;
 }
 
+:focus /* Reset outlines */
+{
+    outline: initial;
+    animation: none;
+}
+
 .hidden
 {
     text-decoration: inherit;
@@ -22,9 +28,26 @@ a
     font-weight: inherit;
 }
 
-h1, h2, h3, h4, h5, h6, p, .heading
+h1, h2, h3, h4, h5, h6, p
 {
     color: rgb(30, 30, 30);
+}
+
+.heading
+{
+    font-weight: bold;
+}
+
+h1
+{
+    font-size: 20px;
+    margin: 0;
+}
+
+h2
+{
+    font-size: 16px;
+    margin: 0;
 }
 
 h5
@@ -77,6 +100,11 @@ li.booklist-item:not(.booklist-last)::after
     background-color: rgb(240, 240, 240);
 }
 
+.book-heading
+{
+    font-size: 20px;
+}
+
 .booklist-last
 {
     padding: 0px !important;
@@ -123,7 +151,7 @@ li.booklist-item:not(.booklist-last)::after
 
 .book-synopsis
 {
-    margin-bottom: 75px;
+    margin-bottom: 25px;
 }
 
 .booklist-item
@@ -140,47 +168,30 @@ li.booklist-item:not(.booklist-last)::after
 
 .author-button
 {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    margin-left: -150px;
-    text-align: center;
-}
-
-.author-button
-{
-    width: 300px;
-    height: 50px;
-
-    -webkit-appearance: none;
-
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: #358240;
+    border: 1px solid #358240;
     font-weight: bold;
-    border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    
+    position: relative;
+    bottom: 10px;
+    margin-left: -125px;
+    text-align: center;
 }
 
 .author-button:hover
 {
-    width: 300px;
-    height: 50px;
-
     transition: all 0.3s ease;
     background-color: whitesmoke;
     border: 1px solid #4CAF50;
     color: #4CAF50;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
 
 }
 

@@ -11,6 +11,7 @@
         <link rel="stylesheet" media="(max-width: 700px)" href="/stylesMobile.css">
         <link rel="shortcut icon" href="/rsc/favicon.ico">
         <link rel="apple-touch-icon" href="/rsc/appleIcon.png">
+        <script src="/script.js"></script>
     </head>
     <body>
         <div id="menu-wrapper" class="flex-container">
@@ -29,7 +30,7 @@
                     <img src="/rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo">
                 </a>
             </div>
-            <a id="window-menu-button" onclick="toggleActive(this)">
+            <a id="window-menu-button" onclick="toggleActive(this)" onkeydown="keyToggleActive(this)" tabindex="0">
                 <div id="line-container">
                     <span class="line line-1" style="top: 5px"></span>
                     <span class="line line-2" style="top: 15px"></span>
@@ -37,7 +38,7 @@
                 </div>
             </a>
             <ul id="window-menu">
-                <li>Page Principale</li>
+                <li><a href="/index.html">Page Principale</a></li>
                 <li><a href="/selection.html">La Séléction</a></li>
                 <li><a href="/about.html">Qui Sommes-Nous?</a></li>
                 <li><a href="http://www.lyceefrancais.org.uk/" target="_blank" rel="noreferrer">Notre Établissement</a></li>
@@ -50,7 +51,7 @@
         <br>
         <div id="main-content-wrapper">
             <div id="page-main-heading">
-                <strong class="heading">Jean Hegland</strong>
+                <h1>Jean Hegland</h1>
             </div>
             <div id="page-content">
                 <img src="/rsc/auteurs/hegland.jpg" alt="Jean-Hegland" class="author-image">
@@ -79,12 +80,5 @@
             </div>
             <img src="/rsc/schoolLogo.png" alt="logo lycée" id="footer-logo">
         </div>    
-        <script>
-            function toggleActive(x)
-            {
-                x.classList.toggle("active");
-                document.getElementById("window-menu").classList.toggle("active");
-            }
-        </script>
     </body>
 </html lang="en">

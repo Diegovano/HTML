@@ -11,6 +11,7 @@
         <link rel="stylesheet" media="(max-width: 700px)" href="stylesMobile.css">
         <link rel="shortcut icon" href="rsc/favicon.ico">
         <link rel="apple-touch-icon" href="rsc/appleIcon.png">
+        <script src="/script.js"></script>
     </head>
     <body>
         <div id="menu-wrapper" class="flex-container">
@@ -29,7 +30,7 @@
                     <img src="rsc/glyph-logo_May2016.png" alt="instagram" id="ig-logo">
                 </a>
             </div>
-            <a id="window-menu-button" onclick="toggleActive(this)">
+            <a id="window-menu-button" onclick="toggleActive(this)" onkeydown="keyToggleActive(this)" tabindex="0">
                 <div id="line-container">
                     <span class="line line-1" style="top: 5px"></span>
                     <span class="line line-2" style="top: 15px"></span>
@@ -50,8 +51,8 @@
         <br>
         <div id="main-content-wrapper">
             <div id="page-main-heading">
-                <strong class="heading">Qui-Sommes Nous?</strong>
-                <h4 class="subtitle"></h4>
+                <h1>Qui-Sommes Nous?</h1>
+                <h2></h2>
             </div>
             <div id="page-content">
 
@@ -63,13 +64,5 @@
             </div>
             <img src="rsc/schoolLogo.png" alt="logo lycée" id="footer-logo">
         </div>    
-        <script>
-            function toggleActive(x)
-            {
-                x.classList.toggle("active");
-                var menu = document.getElementById("window-menu");
-                menu.classList.toggle("active");
-            }
-        </script>
     </body>
 </html>
