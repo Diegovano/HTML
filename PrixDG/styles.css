@@ -382,7 +382,7 @@ li.booklist-item:not(.booklist-last)::after
 
 #footer-content
 {
-    color: rgb(187, 187, 187);
+    color: rgb(115, 115, 115);
     padding: 100px;
     display: inline-block;
 }

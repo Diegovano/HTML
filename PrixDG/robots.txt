@@ -1,4 +1,4 @@
 User-Agent: *
-Disallow: /rsc/test/
+Disallow: /rsc/secretFolder
 
 Sitemap: https://www.diegovano.com/sitemap.xml
