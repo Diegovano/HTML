@@ -21,13 +21,6 @@ a
     animation: none;
 }
 
-.hidden
-{
-    text-decoration: inherit;
-    color: inherit;
-    font-weight: inherit;
-}
-
 h1, h2, h3, h4, h5, h6, p
 {
     color: rgb(30, 30, 30);
