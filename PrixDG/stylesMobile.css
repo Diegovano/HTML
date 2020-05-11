@@ -449,6 +449,17 @@ li.booklist-item:not(.booklist-last)::after
     display: inline-block;
 }
 
+#footer-content span
+{
+    padding: 2px;
+    cursor: help;
+}
+
+#footer-content span a:hover
+{
+    color: inherit;
+}
+
 #footer-logo
 {
     height: 100px;

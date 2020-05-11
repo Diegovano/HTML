@@ -287,8 +287,6 @@ li.booklist-item:not(.booklist-last)::after
     flex-flow: nowrap;
 }
 
-
-
 #logo
 {
     height: 100px;
@@ -386,6 +384,11 @@ li.booklist-item:not(.booklist-last)::after
     color: rgb(115, 115, 115);
     padding: 100px;
     display: inline-block;
+}
+
+#footer-content span a:hover
+{
+    color: inherit;
 }
 
 #footer-logo
