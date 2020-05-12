@@ -278,6 +278,11 @@ li.booklist-item:not(.booklist-last)::after
     outline: 0;
 }
 
+.mysterious-text
+{
+    cursor: help;
+}
+
 #menu-wrapper
 {
     background-color: white;
@@ -389,7 +394,6 @@ li.booklist-item:not(.booklist-last)::after
 #footer-content span
 {
     padding: 2px;
-    cursor: help;
 }
 
 #footer-content span a:hover
