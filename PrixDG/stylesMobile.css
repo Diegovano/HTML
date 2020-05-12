@@ -410,11 +410,6 @@ li.booklist-item:not(.booklist-last)::after
     overflow: auto;
 }
 
-#author-first-pg
-{
-    margin-top: 0px;
-}
-
 #page-footer
 {
     padding-bottom: 10px;
