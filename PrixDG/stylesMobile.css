@@ -106,6 +106,8 @@ li.booklist-item:not(.booklist-last)::after
 .nav-active
 {
     background-color: rgb(236, 235, 235);
+    cursor: default;
+    color: rgb(100, 100, 100) !important;
 }
 
 .bookcover
@@ -514,6 +516,22 @@ li.booklist-item:not(.booklist-last)::after
     opacity: 1;
     transition: all 0.4s;
     z-index: initial;
+}
+
+#window-menu>li>*
+{
+    display: inline-block;
+    width: 100%;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;  
+}
+
+
+#window-menu>li>a:not(:hover)
+{
+    color: black;
 }
 
 #img-portrait

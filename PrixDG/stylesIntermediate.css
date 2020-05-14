@@ -44,7 +44,7 @@ h5
 
 a:hover
 {
-    color: rgb(187, 187, 187);
+    color: rgb(149, 149, 149);
     transition: all 0.3s ease;
 }
 
@@ -290,22 +290,33 @@ li.booklist-item:not(.booklist-last)::after
 {
     border: 1px solid rgb(100, 100, 100);
     border-bottom: 0;
-    padding: 5px;
-    padding-left: 30px;
     color: black;
 }
 
 #window-menu li.nav-last
 {
     border: 1px solid rgb(100, 100, 100);
-    padding: 5px;
-    padding-left: 30px;
     color: black;
 }
 
 #window-menu li:active
 {
     background-color: rgb(250,250,250);
+}
+
+#window-menu>li>*
+{
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;  
+}
+
+#window-menu>li>*:not(:hover)
+{
+    color: rgb(70, 70, 70);
 }
 
 #menu-wrapper
@@ -404,8 +415,7 @@ li.booklist-item:not(.booklist-last)::after
     border-top: 1px solid rgb(240, 240, 240);
 }
 
-#menu-nav-pane
-{
+#menu-nav-pane{
     display: none;
 }
 
