@@ -1,0 +1,20 @@
+body
+{
+    font-family: 'Rubik', sans-serif;
+    background-color: #2E3440;
+}
+
+h1, h2, h3, h4, h5
+{
+    text-align: center;
+    color: #E5E9F0;
+    font-weight: 2;
+}
+
+#map
+{
+    width: 90%;
+    height: 800px;
+    margin: auto;
+    border: 5px solid #4C566A;
+}
