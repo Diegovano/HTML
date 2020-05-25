@@ -11,10 +11,18 @@ h1, h2, h3, h4, h5
     font-weight: 2;
 }
 
-#map
+h1
+{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 25px;
+    border-bottom: solid 5px #5E81AC;
+}
+
+.map
 {
     width: 90%;
     height: 800px;
-    margin: auto;
+    margin: 25px auto;
     border: 5px solid #4C566A;
 }
