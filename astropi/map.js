@@ -6,9 +6,9 @@ function CSVEntry(id, time, otherTime, lat, lng) {
     this.lng = lng;
 }
 
- const csvData = [
+ const csvData = [ // IMPORTANT: DO NOT EDIT DATA AS ORDER IS CRITICAL
     new CSVEntry(0,  "2022-05-04 23:33:10.657077",1588635190.6566072,"-50:21:42.9","-121:22:33.9" ),
-    new CSVEntry(1,  "2020-05-04 23:33:25.474207",1588635205.474148," -50:34:31.2","-119:57:25.7" ),
+    new CSVEntry(1,  "2020-05-04 23:33:25.474207",1588635205.474148,"-50:34:31.2","-119:57:25.7" ),
     new CSVEntry(2,  "2020-05-04 23:33:40.316133",1588635220.3160775,"-50:46:11.2","-118:31:31.1" ),
     new CSVEntry(3,  "2020-05-04 23:33:55.102037",1588635235.1019857,"-50:56:41.7","-117:04:54.0" ),
     new CSVEntry(4,  "2020-05-04 23:34:09.923116",1588635249.9230456,"-51:06:02.0","-115:37:38.0" ),
@@ -723,15 +723,17 @@ const options = {
     opacity: 0.5,
 };
 
-const places = [
+/*const places = [
     new L.LatLng(52.5, 13.35), // Berlin
     new L.LatLng(33.82, -118.38), // Los Angeles
     new L.LatLng(-33.44, -70.71), // Santiago
     new L.LatLng(-33.94, 18.39), // Capetown
 ];
-const geodesic = new L.Geodesic(places, options).addTo(mapbox);
+const geodesic = new L.Geodesic(places, options).addTo(mapbox); */
 
-for (let index = 0; index < places.length; index++) {
+var places = [];
+
+/*for (let index = 0; index < places.length; index++) {
     const element = places[index];
     const circle = new L.circleMarker(element, {
         radius: 10,
@@ -740,24 +742,69 @@ for (let index = 0; index < places.length; index++) {
         fill: true,
         fillOpacity: 0.5
     }).addTo(mapbox);
-}
+}*/
 
-for (let index = 0; index < 4; index++) {
+for (let index = 0; index < csvData.length; index++) {
+
+    var isNeg = 1;
+
     const element = csvData[index];
     
     const latStr = element.lat;
-    var latRes = latStr.split(":");
+    var latArr = latStr.split(":");
 
-    var latDegrees = Number(latRes[0]);
-    var latMinutes = Number(latRes[1]);
-    var latSeconds = Number(latRes[2]);
+    if (latArr[0][0] == '-')
+    {
+        isNeg = -1;     // if DMS is negativem make sure that the mins and secs are substracted rather than added to the degs
+    }
 
-    console.log(latDegrees);
-    console.log(latMinutes);
-    console.log(latSeconds);
+    var latDegrees = Number(latArr[0]);
+    var latMinutes = Number(latArr[1]) * isNeg;
+    var latSeconds = Number(latArr[2]) * isNeg;
+
+    var latDegrees = latDegrees + latMinutes / 60 + latSeconds / 3600;
+
+    //console.log(latDegrees);
+    isNeg = 1;
 
     const lngStr = element.lng;
+    var lngArr = lngStr.split(":");
+
+    if (lngArr[0][0] == '-')
+    {
+        isNeg = -1;
+    }
+
+    var lngDegrees = Number(lngArr[0]);
+    var lngMinutes = Number(lngArr[1]) * isNeg;
+    var lngSeconds = Number(lngArr[2]) * isNeg;
+
+    var lngDegrees = lngDegrees + lngMinutes / 60 + lngSeconds / 3600;
+
+    var latLngObj = new L.LatLng(latDegrees, lngDegrees);
+    
+    const currentCircle = new L.circle(latLngObj, {
+        radius: 30000,
+        color: 'red',
+        opacity: 0,
+        fill: true,
+        fillOpacity: 0.5
+    }).addTo(mapbox);
+
+    var popup = L.popup().setLatLng(latLngObj).setContent(""+index+"<br> lat:  "+latDegrees+"<br> long:  "+lngDegrees);
+
+
+    currentCircle.bindPopup(popup);
+
+    places.push(latLngObj);
 }
+
+/*for (let index = 0; index < csvData.length; index++)
+{
+    console.log(index, places[index]);
+}*/
+
+//const geodesic = new L.Geodesic(places, options).addTo(mapbox);
 
 // const geodesicLine = new L.Geodesic().addTo(mapbox);
 // const geodesicCircle = new L.GeodesicCircle().addTo(mapbox);
