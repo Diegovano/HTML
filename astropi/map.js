@@ -704,13 +704,19 @@ var mapbox = L.map('mapbox-map').setView([52.5, 13.35], 5);
 // Add tiles from the Mapbox Static Tiles API
 // (https://docs.mapbox.com/api/maps/#static-tiles)
 // Tiles are 512x512 pixels and are offset by 1 zoom level
+var southWest = L.latLng(-180,-180),
+    northEast = L.latLng(180,180),
+    bounds = L.latLngBounds(southWest, northEast);
 L.tileLayer(
     //'https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
       'https://api.mapbox.com/styles/v1/diegovo/ckamhikih251t1illcoe0boc9/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
         tileSize: 512,
         zoomOffset: -1,
+        minZoom: 3,
         attribution: '© <a href="https://apps.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(mapbox);
+
+//mapbox.setMaxBounds(mapbox.getBounds());
 
 const Berlin = {lat: 52.5, lng: 13.35};
 const LosAngeles = {lat: 33.82, lng:-118.38};
@@ -753,8 +759,7 @@ for (let index = 0; index < csvData.length; index++) {
     const latStr = element.lat;
     var latArr = latStr.split(":");
 
-    if (latArr[0][0] == '-')
-    {
+    if (latArr[0][0] == '-') {
         isNeg = -1;     // if DMS is negativem make sure that the mins and secs are substracted rather than added to the degs
     }
 
@@ -792,9 +797,10 @@ for (let index = 0; index < csvData.length; index++) {
     }).addTo(mapbox);
 
     var popup = L.popup().setLatLng(latLngObj).setContent(""+index+"<br> lat:  "+latDegrees+"<br> long:  "+lngDegrees);
-
-
     currentCircle.bindPopup(popup);
+    currentCircle.on('click', function(ev) { currentCircle.openPopup(currentCircle.getLatLng()) });
+    
+    //currentCircle.bindTooltip(""+index+"<br> lat:  "+latDegrees+"<br> long:  "+lngDegrees);
 
     places.push(latLngObj);
 }
