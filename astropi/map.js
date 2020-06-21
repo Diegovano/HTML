@@ -6,6 +6,13 @@ function CSVEntry(id, time, otherTime, lat, lng) {
     this.lng = lng;
 }
 
+function pad(num, size=3)
+{
+    var s = num + "";
+    while (s.length < size) s = '0' + s;
+    return s;
+}
+
  const csvData = [ // IMPORTANT: DO NOT EDIT DATA AS ORDER IS CRITICAL
     new CSVEntry(0,  "2022-05-04 23:33:10.657077",1588635190.6566072,"-50:21:42.9","-121:22:33.9" ),
     new CSVEntry(1,  "2020-05-04 23:33:25.474207",1588635205.474148,"-50:34:31.2","-119:57:25.7" ),
@@ -796,8 +803,11 @@ for (let index = 0; index < csvData.length; index++) {
         fillOpacity: 0.5
     }).addTo(mapbox);
 
-    var popup = L.popup().setLatLng(latLngObj).setContent(""+index+"<br> lat:  "+latDegrees+"<br> long:  "+lngDegrees);
-    currentCircle.bindPopup(popup);
+    var popup = L.popup().setLatLng(latLngObj).setContent
+    (
+        "" + '<img src="/lores/' + pad(index) + '.jpg" width=700px padding=50px></img><br>' + index + "<br> lat:  " + latDegrees + "<br> long:  " + lngDegrees
+    );
+    currentCircle.bindPopup(popup, { maxWidth: "auto" });
     currentCircle.on('click', function(ev) { currentCircle.openPopup(currentCircle.getLatLng()) });
     
     //currentCircle.bindTooltip(""+index+"<br> lat:  "+latDegrees+"<br> long:  "+lngDegrees);
