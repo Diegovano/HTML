@@ -228,9 +228,9 @@
     margin-right: 10px
 }
 
-.leaflet-fade-anim .leaflet-tile {
+/* .leaflet-fade-anim .leaflet-tile {
     will-change: opacity
-}
+} */
 
 .leaflet-fade-anim .leaflet-popup {
     opacity: 0;
@@ -251,7 +251,7 @@
 }
 
 .leaflet-zoom-anim .leaflet-zoom-animated {
-    will-change: transform;
+    /*will-change: transform;*/
     -webkit-transition: -webkit-transform .25s cubic-bezier(0, 0, .25, 1);
     -moz-transition: -moz-transform .25s cubic-bezier(0, 0, .25, 1);
     -o-transition: -o-transform .25s cubic-bezier(0, 0, .25, 1);

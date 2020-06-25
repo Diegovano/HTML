@@ -13,7 +13,7 @@ function pad(num, size=3)
     return s;
 }
 
- const csvData = [ // IMPORTANT: DO NOT EDIT DATA AS ORDER IS CRITICAL
+ const csvData = [ // IMPORTANT: DO NOT EDIT AS DATA ORDER IS CRITICAL
     new CSVEntry(0,  "2022-05-04 23:33:10.657077",1588635190.6566072,"-50:21:42.9","-121:22:33.9" ),
     new CSVEntry(1,  "2020-05-04 23:33:25.474207",1588635205.474148,"-50:34:31.2","-119:57:25.7" ),
     new CSVEntry(2,  "2020-05-04 23:33:40.316133",1588635220.3160775,"-50:46:11.2","-118:31:31.1" ),
@@ -706,56 +706,30 @@ function pad(num, size=3)
 ]; 
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiZGllZ292byIsImEiOiJja2FsbTFzY3UwYmVyMnpucXR5Zmd2cWJvIn0.qj7ft925pVqHQYBVYbIzQg';
-var mapbox = L.map('mapbox-map').setView([52.5, 13.35], 5);
-//var leaflet = L.map('leaflet-map').setView([51.4948, -0.175940], 18);
-// Add tiles from the Mapbox Static Tiles API
-// (https://docs.mapbox.com/api/maps/#static-tiles)
-// Tiles are 512x512 pixels and are offset by 1 zoom level
-var southWest = L.latLng(-180,-180),
-    northEast = L.latLng(180,180),
-    bounds = L.latLngBounds(southWest, northEast);
+var map = L.map('map', {
+            maxZoom: 6,
+            minZoom: 3,
+            maxBounds: [
+                [90, -190],
+                [-90, 190]
+            ],
+        }).setView([52.5, 13.35], 5);
+
 L.tileLayer(
-    //'https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
-      'https://api.mapbox.com/styles/v1/diegovo/ckamhikih251t1illcoe0boc9/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
+    /*    'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+    	maxZoom: 19
+    }).addTo(map); */
+       'https://api.mapbox.com/styles/v1/diegovo/ckamhikih251t1illcoe0boc9/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
+        //noWrap: true,
         tileSize: 512,
         zoomOffset: -1,
         minZoom: 3,
         attribution: '© <a href="https://apps.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(mapbox);
-
-//mapbox.setMaxBounds(mapbox.getBounds());
-
-const Berlin = {lat: 52.5, lng: 13.35};
-const LosAngeles = {lat: 33.82, lng:-118.38};
-// const geodesic = new L.Geodesic([Berlin, LosAngeles]).addTo(mapbox);
-
-const options = {
-    steps: 20,
-    weight: 10,
-    color: 'red',
-    opacity: 0.5,
-};
-
-/*const places = [
-    new L.LatLng(52.5, 13.35), // Berlin
-    new L.LatLng(33.82, -118.38), // Los Angeles
-    new L.LatLng(-33.44, -70.71), // Santiago
-    new L.LatLng(-33.94, 18.39), // Capetown
-];
-const geodesic = new L.Geodesic(places, options).addTo(mapbox); */
+    }).addTo(map);
 
 var places = [];
-
-/*for (let index = 0; index < places.length; index++) {
-    const element = places[index];
-    const circle = new L.circleMarker(element, {
-        radius: 10,
-        color: 'red',
-        opacity: 0,
-        fill: true,
-        fillOpacity: 0.5
-    }).addTo(mapbox);
-}*/
 
 for (let index = 0; index < csvData.length; index++) {
 
@@ -776,8 +750,7 @@ for (let index = 0; index < csvData.length; index++) {
 
     var latDegrees = latDegrees + latMinutes / 60 + latSeconds / 3600;
 
-    //console.log(latDegrees);
-    isNeg = 1;
+    isNeg = 1; //reset
 
     const lngStr = element.lng;
     var lngArr = lngStr.split(":");
@@ -801,33 +774,26 @@ for (let index = 0; index < csvData.length; index++) {
         opacity: 0,
         fill: true,
         fillOpacity: 0.5
-    }).addTo(mapbox);
+    }).addTo(map);
 
     var popup = L.popup().setLatLng(latLngObj).setContent
     (
-        "" + '<img src="/lores/' + pad(index) + '.jpg" width=700px padding=50px></img><br>' + index + "<br> lat:  " + latDegrees + "<br> long:  " + lngDegrees
+        `<div class=map-popup-container><img class="map-popup-image" src="/lores/${pad(index)}.jpg">
+        </img><br><span class="map-popup-label">Image ID:</span>${index}<br><span class="map-popup-label">Latitude:</span>
+        ${Math.round(latDegrees * 1000) / 1000}<br> <span class="map-popup-label">Longitude:</span>
+        ${Math.round(lngDegrees * 1000) / 1000}</div>`
     );
     currentCircle.bindPopup(popup, { maxWidth: "auto" });
     currentCircle.on('click', function(ev) { currentCircle.openPopup(currentCircle.getLatLng()) });
     
-    //currentCircle.bindTooltip(""+index+"<br> lat:  "+latDegrees+"<br> long:  "+lngDegrees);
-
     places.push(latLngObj);
 }
 
-/*for (let index = 0; index < csvData.length; index++)
-{
-    console.log(index, places[index]);
-}*/
-
-//const geodesic = new L.Geodesic(places, options).addTo(mapbox);
-
-// const geodesicLine = new L.Geodesic().addTo(mapbox);
-// const geodesicCircle = new L.GeodesicCircle().addTo(mapbox);
-
-/*L.tileLayer(
-    'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    	subdomains: 'abcd',
-    	maxZoom: 19
-    }).addTo(leaflet);*/
+const esaHQ = new L.LatLng(48.8469, 2.3136)
+const esaCircle = new L.circle(esaHQ , {
+radius: 3000,
+color: 'blue',
+opacity: 0,
+fill: true,
+fillOpacity: 0.5
+}).addTo(map).bindPopup(L.popup().setLatLng(esaHQ).setContent("ESA Headquaters! <br> Nice find ;)")).on('click', function(ev) { esaCircle.openPopup(esaCircle.getLatLng()) });

@@ -18,13 +18,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to the TeamRKT interactive map!</h1>
-    <h2>Mapbox Custom Map</h2>
-    <div class="map" id="mapbox-map"></div>
-    <!--<h2>Leaflet with CARTO Dark Map with No Labels</h2>
-    <div class="map" id="leaflet-map"></div>-->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.geodesic"></script>
-    <script src="map.js"></script>
+    <div id="content">
+        <h1 id="header">Welcome to the TeamRKT interactive&nbsp;map!</h1>
+        <div id="about-us"><img id="top-logo" src="logoi.jpg" alt="TeamRKT Logo">
+            <!--Version 1<p>We are TeamRKT, we are a small, closely-knit team of four motivated people. As soon as we downloaded all the data that we captured during our alloted 300-minute window, we were faced with the daunting task of organising and sorting our results (over 1.3 GB!). After some consideration &mdash; we decided how we would proceed.</p>
+            -->
+            <p>Hi there!</p>
+            <p>We're TeamRKT&nbsp;&mdash;&nbsp;a group of four 6th formers who took part in the Astro Pi 2020 competition organised by the European Space Agency and the Raspberry Pi Foundation.</p>
+            <p>We designed an experiment using the Raspberry Pi onboard the International Space Station to capture images of aquatic ecosystems, using a near-infrared camera. We wanted to study the incidence and growth of <abbr title="harmful algal blooms">HABs</abbr>, and test hypotheses on what could have caused them&nbsp;&mdash;&nbsp;by processing the images using an <abbr title="normalised difference vegetation index">NDVI</abbr> filter in order to identify vegetation in the water.</p>
+            <p>HABs have been associated with mass fish kills, wildlife mortality, as well as liver failure and irreversible neurological disease in humans due to toxins produced by the algae.</p>
+            <p>Using <a href="https://leafletjs.com/" target="_blank" rel="norefferer">Leaflet</a>, an open-source JS library to create interactive maps, we have created a map that facilitates previewing of down-scaled AstroPi captures alongside very useful information, such as an ID number for each capture. We hope this website could help future teams to find inspiration and see what can be done once the data is collected.</p> 
+        </div>
+        <div id="map-container"><div id="map"></div></div> <!--TEMPORARILY DISABLED TO SAVE API CALLS-->
+        <script src="map.js"></script>
+    </div>
+    <div id="footer">
+        <span id="team">Made in London&nbsp;&mdash;&nbsp;by Aaron, Diego, Luc, and Tim + Tanya Forster</span>
+        <span id="school">Lycée Français Charles de Gaulle de Londres</span>
+    </div>
 </html>
-
-<!--<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2414550781250002%2C50.59195560903164%2C0.703125%2C52.10481822023324&amp;layer=mapnik"></iframe><br/><small></small>-->
