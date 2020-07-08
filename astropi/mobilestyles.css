@@ -1,0 +1,53 @@
+p
+{
+    font-size: 17px;
+    line-height: 25px;
+}
+
+.map-popup-image
+{
+    width: 200px;
+}
+
+.map-popup-container
+{
+    padding: 5px;
+}
+
+#header
+{
+    margin-top: 30px;
+    padding-bottom: 30px;
+    font-size: 25px;
+}
+
+#about-us
+{
+    padding: 30px 5vw 30px 5vw;
+}
+
+#top-logo
+{
+    width: 200px;
+}
+
+#footer
+{
+    padding-bottom: 40px;
+    font-size: 14px;
+}
+
+#team
+{
+    float: none;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#school
+{
+    float: none;
+    width: 100%;
+    text-align: center;
+}

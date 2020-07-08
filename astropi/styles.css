@@ -22,19 +22,13 @@ p
 {
     color: #E5E9F0;
     font-size: 20px;
-    line-height: 30px; /* To optimse text flow around logo */
+    line-height: 30px;
 }
 
 a
 {
     color: #D8DEE9;
     transition: all ease 0.2s;
-}
-
-span
-{
-    color: #D8DEE9;
-    display: inline-block;
 }
 
 a:hover
@@ -137,6 +131,17 @@ abbr
 #about-us > p
 {
     margin-top: 0;
+}
+
+#footer-br
+{
+    display: none;
+}
+
+#footer > div
+{
+    color: #D8DEE9;
+    display: inline-block;
 }
 
 #about-us > p:last-child
