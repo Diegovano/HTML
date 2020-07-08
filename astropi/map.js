@@ -713,6 +713,7 @@ var map = L.map('map', {
                 [90, -190],
                 [-90, 190]
             ],
+            scrollWheelZoom: false,
         }).setView([52.5, 13.35], 5);
 
 L.tileLayer(
@@ -724,7 +725,7 @@ L.tileLayer(
        'https://api.mapbox.com/styles/v1/diegovo/ckamhikih251t1illcoe0boc9/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
         //noWrap: true,
         tileSize: 512,
-        zoomOffset: -1,
+         zoomOffset: -1,
         minZoom: 3,
         attribution: '© <a href="https://apps.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
