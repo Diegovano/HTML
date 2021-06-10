@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script type="text/x-mathjax-config">
+        MathJax = {
+            svg: {fontCache: 'global'}
+        };
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+    <script src="script.js"></script>
+    <title>LaTeXConv</title>
+</head>
+<body>
+    <div id="header">
+        <h1>\(\LaTeX\)Conv &mdash; pour tous vos besoins mathématiques !</h1>
+        <h2>Pour Monsieur N. Maral</h2>
+    </div>
+    <div id="main">
+        <div class="flagelem" id="left"></div>
+        <div class="flagelem" id="middle"><div id="center">
+            <label for="codebox">Code \(\LaTeX\) :</label><br>
+            <div class="textbox">
+                <textarea name="codebox" id="textboxtypearea"></textarea><br>      
+            </div>
+            <button id="button">C'est parti !</button>
+            <br><br>
+            <label for="result">Résultat (SVG) :</label>
+            <div id="resbox" class="textbox"></div>
+            <button id="download">Télécharger SVG</button>
+        </div></div>
+        <div class="flagelem" id="right"></div>
+    </div>
+    <div id="footer">
+        <div id="authorfoot">Diego Van Overberghe</div>
+        <div id="schoolfoot">Lycée Français Charles de Gaulle de Londres</div>
+    </div>
+</body>
+</html>
